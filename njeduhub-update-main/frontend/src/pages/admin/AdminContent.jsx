@@ -188,7 +188,10 @@ const AdminContent = ({ path }) => {
       setRows(normalized.filter(Boolean));
     } finally { setLoading(false); }
   };
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [path]);
+useEffect(() => {
+  load();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [path]);
 
   const save = async () => {
     if (path === 'site-settings') {
