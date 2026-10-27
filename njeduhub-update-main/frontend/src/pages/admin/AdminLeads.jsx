@@ -76,7 +76,10 @@ const AdminLeads = ({ path }) => {
       toast({ title: status === 401 ? 'Session expired' : 'Could not load', description: status === 401 ? 'Please sign in again.' : e?.message });
     } finally { setLoading(false); }
   };
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [path]);
+  useEffect(() => {
+  load();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [path]);
 
   const filtered = rows.filter((r) =>
     (status === 'all' || r.status === status) &&
