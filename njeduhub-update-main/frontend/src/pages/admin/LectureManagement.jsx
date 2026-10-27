@@ -83,10 +83,11 @@ const LectureManagement = ({ mode = 'list', lectureId = null }) => {
   };
 
   useEffect(() => {
-    if (mode === 'list') {
-      loadLectures();
-    }
-  }, [mode]);
+  if (mode === 'list') {
+    loadLectures();
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [mode]);
 
   useEffect(() => {
     if (mode === 'edit' && lectureId) {
