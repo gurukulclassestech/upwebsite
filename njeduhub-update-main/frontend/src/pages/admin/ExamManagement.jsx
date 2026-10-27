@@ -75,11 +75,12 @@ const ExamManagement = ({ mode = 'list', examId = null }) => {
     }
   };
 
-  useEffect(() => {
-    if (mode === 'list') {
-      loadExams();
-    }
-  }, [mode]);
+ useEffect(() => {
+  if (mode === 'list') {
+    loadExams();
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [mode]);
 
   useEffect(() => {
     if (mode === 'edit' && examId) {
